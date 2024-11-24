@@ -1,0 +1,644 @@
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+    scroll-behavior: smooth;
+}
+
+body{
+    background-color: #fff;
+    width: 100%;
+    font-family: "Playfair Display", serif;
+    font-optical-sizing: auto;
+}
+
+.slide-in {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity .5s ease-in-out, transform 1s ease-in-out;
+}
+
+.slide-in.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/*====================
+    Navbar Styling
+======================*/
+
+header {
+    background-color: transparent;
+    padding: 0;
+}
+
+.landing{
+    background-image: linear-gradient(180deg, rgba(0, 0, 0, 0) 90.23%, pink 100%), 
+    url(img/bannerx.png);
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar{
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: transparent;
+    transition: 0.3s ease-in-out;
+    z-index: 999;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0px 60px;
+    background-color: 0.3s ease-in-out, 0.3s ease-in-out;
+}
+
+.navbar.scrolled {
+    background-color: #fff;
+}
+
+.logo{
+    display: flex;
+    align-items: center;
+}
+
+.logo img{
+    padding-top: 10px;
+    width: 150px;
+    margin-right: 10px;
+}
+
+.nav-links{
+    font-size: 20px;
+    display: flex;
+    gap: 20px;
+    list-style: none;
+}
+
+.nav-links li a{
+    position: relative;
+    color: palevioletred;
+    font-weight: 600;
+    padding: 8px 10px;
+    transition: color 0.3s ease;
+    scroll-behavior: smooth;
+}
+
+.nav-links li a::before{
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background-color: palevioletred;
+    transition: width 0.3s ease, left 0.3s ease;
+}
+
+.nav-links li a:hover::before{
+    width: 100%;
+    left: 0;
+}
+
+.nav-links li a:hover{
+    color: palevioletred;
+}
+
+.banner{
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    padding-top: 250px;
+}
+
+.head span{
+    transition: .3s ease-in;
+    color: white;
+    margin-bottom: 0;
+    font-size: 80px;
+    font-weight: 600;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.subhead1{
+    transition: .3s ease-in;
+    color: white;
+    margin-bottom: 0;
+    font-size: 20px;
+    font-weight: 400;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.subhead2{
+    color: white;
+    font-weight: 400;
+    font-size: 20px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.menu-icon{
+    display: none;
+    font-size: 20px;
+    cursor: pointer;
+    color: #5b4033;
+    padding: 10px;
+}
+
+/*====================
+    Service Styling
+======================*/
+.service{
+    background: pink;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
+    padding-top: 100px;
+    position: relative;
+}
+
+.service h1{
+    background-color:palevioletred;
+    background-image: linear-gradient(to right, rgb(239, 125, 163) 0%, rgb(234, 122, 159) 0%, palevioletred 21%, rgb(189, 86, 120) 52%, rgb(181, 69, 107) 78%, rgb(169, 25, 73) 100%);
+    background-size: 100%;
+    margin-bottom: 1rem;
+    font-size: 2.5rem;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -moz-text-fill-color: transparent;
+}
+
+.service-container{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.service-card{
+    margin: 1rem;
+    height: 500px;
+    width:400px;
+    border-radius: 4px;
+    background-image: linear-gradient(to bottom, rgba(216, 112, 147, 0) 0%, rgba(209, 42, 98, 0) 100%), url(img/manicure.jpg);
+    background-size: cover;
+    position: relative;
+    color: rgb(209, 84, 125);
+}
+
+.service-card:nth-child(2){
+    background-image: linear-gradient(to bottom, rgba(216, 112, 147, 0) 0%, rgba(209, 42, 98, 0) 100%), url(img/pedi.png);
+}
+
+.service-card:nth-child(3){
+    background-image: linear-gradient(to bottom, rgba(216, 112, 147, 0) 0%, rgba(209, 42, 98, 0) 100%), url(img/nailart.jpg);
+}
+
+.service h2{
+    position: absolute;
+    top: 350px;
+    left: 30px;
+}
+
+.service-card p{
+    position: absolute;
+    top: 390px;
+    left: 30px;
+}
+
+.service-card button{
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    outline: none;
+    border-radius: 4px;
+    background: palevioletred;
+    position: absolute;
+    top: 440px;
+    left: 30px;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+.service-card button:hover{
+    background: #fff;
+    color: palevioletred;
+}
+
+.service-card:hover{
+    transform: scale(1.075);
+    transition: 0.2s ease-in;
+    cursor: pointer;
+}
+
+/*====================
+    Gallery Styling
+======================*/
+.gallery{
+    padding-top: 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
+    position: relative;
+}
+
+.gallery h1{
+    background-color:#fff;
+    background-image: linear-gradient(to right, rgb(255, 193, 214) 0%, rgb(255, 147, 185) 0%, rgb(231, 118, 156) 21%, rgb(209, 101, 139) 52%, rgb(203, 87, 126) 78%, rgb(194, 80, 118) 100%);
+    background-size: 100%;
+    margin-bottom: 0;
+    font-size: 2.5rem;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -moz-text-fill-color: transparent;
+}
+
+.gallery p{
+    transition: .3s ease-in;
+    color: rgb(194, 80, 118);
+    font-weight: 400;
+    font-size: 20px;
+}
+
+.gallery-list{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 3rem auto;
+    padding: 0 10px;
+    position: relative;
+}
+
+.gallery-img{
+    margin: 0.5rem;
+    filter: drop-shadow(16px 16px 16px rgba(0,0,0,0.2));
+}
+
+.gallery-img img{
+    height: 300px;
+    width: 300px;
+    border-radius: 10px;
+}
+
+.gallery-img:hover img{
+    transform: scale(1.1);
+}
+
+.gallery button{
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    margin-top: 10px;
+    outline: none;
+    border-radius: 4px;
+    background: palevioletred;
+    position: relative;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+.gallery button:hover{
+    background: rgb(255, 168, 197);
+    color: #fff;
+}
+
+/*====================
+    About Us Styling
+======================*/
+.abtus{
+    background: pink;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 400px 150px;
+}
+
+.abtus-container{
+    display: flex;
+    align-items: center;
+    width: 100%;
+    flex-wrap: wrap;
+    background: #fff;
+    border-radius: 20px;
+}
+
+.story-image{
+    height: 500px;
+    max-width: 500px;
+}
+
+.story-image img{
+   height: 500px;
+    width: 500px;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+}
+
+.story-content{
+    width: 500px;
+    padding: 50px;
+}
+
+.story-content h1{
+    margin-bottom: 20px;
+    margin-top: 0;
+    color: palevioletred;
+    font-size: 50px;
+}
+
+.story-content p{
+    line-height: 2;
+    margin-bottom: 30px;
+    color: gray;
+}
+
+.abtus-btn{
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    margin-top: 10px;
+    outline: none;
+    border-radius: 4px;
+    background: palevioletred;
+    position: relative;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+.abtus-btn:hover{
+    background: rgb(255, 168, 197);
+    color: #fff;
+}
+
+
+/*====================
+    Testimony Styling
+======================*/
+.testimony{
+    height: 100vh;
+    width: 80%;
+    margin: auto;
+    padding-top: 100px;
+    text-align: center;
+}
+
+.testimony-title{
+    margin-bottom: 50px;
+    margin-top: 0;
+    color: palevioletred;
+    font-size: 50px;
+}
+
+.row{
+    display: flex;
+    flex-wrap: wrap;
+    margin: 5px;
+    justify-content: space-between;
+}
+
+.testimonial-col{
+    flex-basis: 44%;
+    border-radius: 10px;
+    margin-bottom: 5%;
+    text-align: left;
+    background: palevioletred;
+    color: #fff;
+    padding: 25px;
+    cursor: pointer;
+    display: flex;
+    max-width: 350px;
+    height: 400px;
+}
+
+.testimonial-col img{
+    height: 40px;
+    margin-left: 5px;
+    margin-right: 30px;
+    border-radius: 50%;
+}
+
+.profile-col{
+    display: flex;
+    margin-bottom: 15px;
+}
+
+.testimonial-col p{
+    padding: 0;
+}
+
+.profile-col h3{
+    font-size: 20px;
+    margin-top: 8px;
+    text-align: left;
+    margin-bottom: 15px;
+}
+
+/*====================
+    Footer Styling
+======================*/
+/* footer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: pink;
+    padding-top: 30px;
+}
+
+.social a{
+    font-size: 27px;
+    margin: 0.5rem;
+}
+
+.social a .bx{
+    padding: 10px;
+    color: black;
+    background-color: white;
+    border-radius: 50%;
+}
+
+.social a .bx:hover{
+    background: palevioletred;
+}
+
+.footer-links{
+    margin: 1.5rem 0 1.5rem;
+    padding-bottom: 5px;
+}
+
+.footer-links a{
+    font-size: 1.3rem;
+    font-weight: 500;
+    color: black;
+    padding: 2rem;
+    text-decoration: none;
+}
+
+.footer-links a:hover{
+    color: palevioletred;
+}
+
+.copy{
+    background-color: palevioletred;
+    width: 100%;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+.copy p{
+    text-align: center;
+    font-size: 1rem;
+} */
+
+.footer{
+    margin-top: 100px;
+    width: 100%;
+    padding: 50px 15%;
+    background: palevioletred;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+}
+
+.footer .div{
+    text-align: center;
+}
+
+.col-1{
+    text-align: center;
+    align-items: center;
+}
+
+.footer div h3{
+    font-weight: 300;
+    margin-bottom: 30px;
+    letter-spacing: 1px;
+}
+
+.col-1 a{
+    display: block;
+    text-decoration: none;
+    color: white;
+    margin-bottom: 10px;
+}
+
+.col-1 a:hover{
+    color: rgb(192, 80, 117);
+}
+
+.col-2{
+    text-align: center;
+    max-width: 250px;
+}
+
+.social{
+    margin-top: 20px;
+}
+
+.social a{
+    font-size: 20px;
+    margin: 0.3rem;
+}
+
+.social a .bx{
+    padding: 10px;
+    color: black;
+    background-color: white;
+    border-radius: 50%;
+}
+
+.social a .bx:hover{
+    background: rgb(192, 80, 117);
+}
+
+.copy{
+    padding: 10px;
+    text-align: center;
+    background-color: palevioletred;
+    color: white;
+}
+
+.copy hr{
+    border: 1px solid pink;
+    margin: 10px;
+}
+
+/*====================
+    Menu Styling
+======================*/
+
+@media (max-width: 768px){
+    .nav-links{
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        height: 50%;
+        max-height: 0;
+        top: 80px;
+        left: 0;
+        right: 0;
+        background-color: whitesmoke;
+        overflow: hidden;
+        text-align: center;
+        justify-content: center;
+        transition: max-height 0.5s ease-in-out;
+        z-index: 1000;
+    }
+
+    .nav-links.show{
+        max-height: 300px;
+    }
+    
+    .menu-icon{
+        display: block;
+        z-index: 1001;
+    }
+
+    header{
+        z-index: 1000;
+    }
+
+    .service{
+        height: auto;
+    }
+
+    .service h1{
+        font-size: 2rem;
+        margin-top: 12rem;
+    }
+
+    .gallery{
+        height: auto;
+        padding-bottom: 20px;
+    }
+
+    .abtus{
+        height: auto;
+        padding: 100px 20px;
+        flex-direction: column;
+    }
+
+    .story-content, .story-image{
+        max-width: auto;
+        height: auto;
+    }
+
+    .story-content{
+        text-align: center;
+        padding: 30px 10px;
+    }
+}
